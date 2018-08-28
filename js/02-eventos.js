@@ -36,5 +36,33 @@ window.addEventListener('load', function(){
     });
 
     /*Focus y blur */
+    var nombre = $('#nombre');
+    var datos = $('#datos');
 
+    nombre.focus(function(){
+        $(this).css('border', '1px solid purple');
+    });
+
+    nombre.blur(function(){
+        $(this).css('border', '1px solid pink');
+        datos.text($(this).val()).show(); //Recoger un valor de input al usar blur
+    });
+
+    /*Mousedown, Mouseup */
+    datos.mousedown(function(){
+        $(this).css('border-color', 'gray');
+    });
+
+    datos.mouseup(function(){
+        $(this).css('border-color', 'blue');
+    });
+
+    /*Mousemove: l mover el curso, mostraremos las corrdenadas dle puntero en consola */
+    var sigueme = $('#sigueme');
+    $(document).mousemove(function(){
+        $('body').css('cursor', 'none');
+        sigueme.css('left', event.clientX)
+                .css('top', event.clientY);
+        //console.log('Tus coordenadas actuales son: ' + event.clientX + ',' + event.clientY);
+    });
 });
