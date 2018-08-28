@@ -14,3 +14,11 @@
 .resaltado{
     border-bottom: 2px solid green;
 }
+
+#caja2{
+    width: 250px;
+    height: 250px;
+    border: 2px solif black;
+    background: yellow;
+
+}
